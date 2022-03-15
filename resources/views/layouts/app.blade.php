@@ -73,7 +73,17 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 d-flex justify-content-center flex-column">
+                        <h1 class="font-weight-bold text-uppercase text-danger m-3 text-center bg-info p-5">Posts</h1>
+                        <div>
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>

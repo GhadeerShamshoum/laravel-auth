@@ -10962,3 +10962,8 @@ a.text-dark:focus {
   }
 }
 
+th {
+  font-size: 20px;
+  color: blue;
+}
+

@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
+<a href="{{route("admin.posts.create")}}"><button type="button" class="btn  btn-warning">add</button></a>
     
 <table class="table">
   <thead>

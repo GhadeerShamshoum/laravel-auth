@@ -24,6 +24,10 @@
       <td>{{$post->content}}</td>
       <td>{{$post->published}}</td>
       <td>{{$post->slug}}</td>
+      <td>
+        <a href="{{route("admin.posts.show", $post->id)}}"><button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button></a>
+        <a href="{{route("admin.posts.edit", $post->id)}}"><button type="button" class="btn btn btn-info"></button><i class="bi bi-pen"></i></a>
+      </td>
     </tr>
     @endforeach
 @endsection

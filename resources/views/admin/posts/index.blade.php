@@ -24,9 +24,14 @@
       <td>{{$post->content}}</td>
       <td>{{$post->published}}</td>
       <td>{{$post->slug}}</td>
-      <td>
-        <a href="{{route("admin.posts.show", $post->id)}}"><button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button></a>
-        <a href="{{route("admin.posts.edit", $post->id)}}"><button type="button" class="btn btn btn-info"></button><i class="bi bi-pen"></i></a>
+      <td class="d-flex">
+        <a class="m-2" href="{{route("admin.posts.show", $post->id)}}"><button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button></a>
+        <a class="m-2" href="{{route("admin.posts.edit", $post->id)}}"><button type="button" class="btn btn btn-info"></button><i class="bi bi-pen"></i></a>
+        <form action="{{route("admin.posts.destroy", $post->id)}}" method="POST">
+              @csrf
+              @method("DELETE")
+              <button type="submit" class="btn btn-danger m-2" onclick="return confirm('Are you sure wwant to delete this item?')"><i class="bi bi-trash"></i></button>
+          </form>
       </td>
     </tr>
     @endforeach

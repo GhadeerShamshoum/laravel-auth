@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 <h1 class="text-center">update:{{$post->name}}</h1>
 <form action="{{route("admin.posts.update", $post->id)}}" method="POST">
@@ -7,7 +6,7 @@
   @method('PUT')
   <div class="form-group col-md-12">
     <label for="title">title</label>
-    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="add title" value="{{old("title")??$film->title}}">
+    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="add title" value="{{old("title")??$post->title}}">
     @error('title')
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror

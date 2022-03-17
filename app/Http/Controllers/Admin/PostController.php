@@ -100,7 +100,9 @@ class PostController extends Controller
 
         $slug = Str::slug($form_data['title']);
         $count = 1;
-        while(Post::where('slug', $slug)->first()){
+        while(Post::where('slug', $slug)
+            ->where('id', '!=, $post->id')
+            ->first()){
             $slug = Str::slug($form_data['title'])."-".$count;
             $count++;
         }
